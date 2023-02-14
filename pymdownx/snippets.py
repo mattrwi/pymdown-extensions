@@ -166,7 +166,8 @@ class SnippetPreprocessor(Preprocessor):
             print("length is: ")
             print(length)
             if length is None:
-                raise ValueError("Missing content-length header")
+                length=1048576
+                #raise ValueError("Missing content-length header")
             content_length = int(length)
 
             if self.url_max_size != 0 and content_length >= self.url_max_size:
