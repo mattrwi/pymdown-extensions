@@ -163,6 +163,8 @@ class SnippetPreprocessor(Preprocessor):
             # We provide some basic protection against absurdly large files.
             # 32MB is chosen as an arbitrary upper limit. This can be raised if desired.
             length = response.headers.get("content-length")
+            print("length is: ")
+            print(length)
             if length is None:
                 raise ValueError("Missing content-length header")
             content_length = int(length)
