@@ -150,6 +150,7 @@ class SnippetPreprocessor(Preprocessor):
 
         The most recently used files are kept in a cache until the next reset.
         """
+        print("downloading: " + url)
 
         http_request = urllib.request.Request(url, headers=self.url_request_headers)
         timeout = None if self.url_timeout == 0 else self.url_timeout
